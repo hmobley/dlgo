@@ -143,8 +143,6 @@ class Board():
             new_string = new_string.merged_with(same_color_string)
         for new_string_point in new_string.stones:
             self._grid[new_string_point] = new_string
-        print('what do we got?')
-        print(zobrist.HASH_CODE)
         # Remove empty-point hash code.
         self._hash ^= zobrist.HASH_CODE[point, None]
         # Add filled point hash code.
