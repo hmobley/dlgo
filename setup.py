@@ -12,5 +12,6 @@ setup(name='dlgo',
       author='Rich Devine',
       author_email='hankdman@gmail.com',
       license='MIT',
-      packages=find_packages(),
+      packages=["dlgo","dlgo.agent","dlgo.data","dlgo.encoders",
+                "dlgo.gosgf","dlgo.mcts","dlgo.networks","dlgo.nn"],
       zip_safe=False)
