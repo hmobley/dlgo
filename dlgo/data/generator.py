@@ -35,8 +35,13 @@ class DataGenerator:
                     yield x_batch, y_batch
 
     def generate(self, batch_size=128, num_classes=19 * 19):
+        outer = 0
+        inner = 0
         while True:
+            outer += 1
             for item in self._generate(batch_size, num_classes):
+                inner += 1
+                print("yield counts: outer: {}, inner: {}".format(outer,inner))
                 yield item
 
     
