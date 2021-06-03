@@ -22,16 +22,19 @@ class DataGenerator:
             return self.num_samples
 
     def _generate(self, batch_size, num_classes):
-        print("_generate called")
+        #print("_generate called")
         czip = 0
         cfeature = 0
         cbatch = 0
+        print('{} zip files to process'.format(len(self.files)))
         for zip_file_name in self.files:
             czip += 1
             file_name = zip_file_name.replace('.tar.gz', '') + 'train'
             base = self.data_directory = '/' + file_name + '_features_*.npy'
+            print('{} feature files to process ({})'.format(len(glob.glob(base)),czip))
             for feature_file in glob.glob(base):
                 cfeature += 1
+                print('feature file: {}'.format(cfeature))
                 label_file = feature_file.replace('features', 'labels')
                 x = np.load(feature_file)
                 y = np.load(label_file)
