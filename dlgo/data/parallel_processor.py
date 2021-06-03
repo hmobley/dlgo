@@ -34,6 +34,7 @@ class GoDataProcessor:
         self.encoder_string = encoder
         self.encoder = get_encoder_by_name(encoder, 19)
         self.data_dir = data_directory
+        print("GoDataProcessor:__init__.data_dir: '{}'".format(self.data_dir))
 
 # tag::load_generator[]
     def load_go_data(self, data_type='train', num_samples=1000,
@@ -44,6 +45,7 @@ class GoDataProcessor:
         sampler = Sampler(data_dir=self.data_dir)
         data = sampler.draw_data(data_type, num_samples)
 
+        print("GoDataProcessor:load_go_data.data_dir: '{}'".format(self.data_dir))
         self.map_to_workers(data_type, data)  # <1>
         if use_generator:
             generator = DataGenerator(self.data_dir, data)
@@ -58,7 +60,7 @@ class GoDataProcessor:
 # end::load_generator[]
 
     def unzip_data(self, zip_file_name):
-        print("datadir: '{}'".format(self.data_dir))
+        print("GoDataProcessor:unzip_data.datadir: '{}'".format(self.data_dir))
         this_gz = gzip.open(self.data_dir + '/' + zip_file_name)
 
         tar_file = zip_file_name[0:-3]
