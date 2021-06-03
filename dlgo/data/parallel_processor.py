@@ -28,9 +28,11 @@ def worker(jobinfo):
     except (KeyboardInterrupt, SystemExit):
         raise Exception('>>> Exiting child process.')
 
-
+import traceback
 class GoDataProcessor:
     def __init__(self, encoder='simple', data_directory='data'):
+        if data_directory == 'data'):
+            traceback.print_stack(file=sys.stdout)
         self.encoder_string = encoder
         self.encoder = get_encoder_by_name(encoder, 19)
         self.data_dir = data_directory
