@@ -22,7 +22,7 @@ class DataGenerator:
             return self.num_samples
 
     def _generate(self, batch_size, num_classes):
-        #print("_generate called")
+        print("_generate called")
         czip = 0
         cfeature = 0
         cbatch = 0
