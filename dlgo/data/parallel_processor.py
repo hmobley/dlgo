@@ -58,6 +58,7 @@ class GoDataProcessor:
 # end::load_generator[]
 
     def unzip_data(self, zip_file_name):
+        print("datadir: '{}'".format(self.data_dir))
         this_gz = gzip.open(self.data_dir + '/' + zip_file_name)
 
         tar_file = zip_file_name[0:-3]
