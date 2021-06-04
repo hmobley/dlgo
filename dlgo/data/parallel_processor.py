@@ -50,7 +50,7 @@ class GoDataProcessor:
         #print("GoDataProcessor:load_go_data.data_dir: '{}'".format(self.data_dir))
         self.map_to_workers(data_type, data)  # <1>
         if use_generator:
-            print("creating DataGenerator with data_dir: '{}'".format(self.data_dir))
+            #print("creating DataGenerator with data_dir: '{}'".format(self.data_dir))
             generator = DataGenerator(self.data_dir, data)
             return generator  # <2>
         else:
