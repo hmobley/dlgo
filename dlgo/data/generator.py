@@ -6,7 +6,7 @@ class DataGenerator:
     def __init__(self, data_directory, samples):
         #print("DataGenerator.__init__ called")
         self.data_directory = data_directory
-        print("DataGenerator.__init__.data_directory = '{}'".format(self.data_directory))
+        #print("DataGenerator.__init__.data_directory = '{}'".format(self.data_directory))
         self.samples = samples
         self.files = set(file_name for file_name, index in samples)
         self.num_samples = None
