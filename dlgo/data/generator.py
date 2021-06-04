@@ -17,9 +17,12 @@ class DataGenerator:
             return self.num_samples
         else:
             self.num_samples = 0
+            print("begin num_samples: {}".format(self.num_samples))
             for X, y in self._generate(batch_size=batch_size,
                                        num_classes=num_classes):
                 self.num_samples += X.shape[0]
+                print("num_samples: {}".format(self.num_samples))
+            print("final num_samples: {}".format(self.num_samples))
             return self.num_samples
 
     def _generate(self, batch_size, num_classes):
