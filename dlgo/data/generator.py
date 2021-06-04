@@ -31,7 +31,7 @@ class DataGenerator:
         for zip_file_name in self.files:
             czip += 1
             file_name = zip_file_name.replace('.tar.gz', '') + 'train'
-            base = self.data_directory = '/' + file_name + '_features_*.npy'
+            base = self.data_directory + '/' + file_name + '_features_*.npy'
             print("{} feature files to process ({}) in '{}'".format(len(glob.glob(base)),
                                                                   czip,
                                                                   self.data_directory))
