@@ -32,9 +32,9 @@ class DataGenerator:
             czip += 1
             file_name = zip_file_name.replace('.tar.gz', '') + 'train'
             base = self.data_directory = '/' + file_name + '_features_*.npy'
-            print('{} feature files to process ({}) in {}'.format(len(glob.glob(base)),
+            print("{} feature files to process ({}) in '{}'".format(len(glob.glob(base)),
                                                                   czip,
-                                                                  base))
+                                                                  self.data_directory))
             for feature_file in glob.glob(base):
                 cfeature += 1
                 print('feature file: {}'.format(cfeature))
