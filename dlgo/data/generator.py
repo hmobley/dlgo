@@ -6,6 +6,7 @@ class DataGenerator:
     def __init__(self, data_directory, samples):
         #print("DataGenerator.__init__ called")
         self.data_directory = data_directory
+        print("DataGenerator.__init__.data_directory = '{}'".format(self.data_directory))
         self.samples = samples
         self.files = set(file_name for file_name, index in samples)
         self.num_samples = None
@@ -31,7 +32,9 @@ class DataGenerator:
             czip += 1
             file_name = zip_file_name.replace('.tar.gz', '') + 'train'
             base = self.data_directory = '/' + file_name + '_features_*.npy'
-            print('{} feature files to process ({})'.format(len(glob.glob(base)),czip))
+            print('{} feature files to process ({}) in {}'.format(len(glob.glob(base)),
+                                                                  czip,
+                                                                  base))
             for feature_file in glob.glob(base):
                 cfeature += 1
                 print('feature file: {}'.format(cfeature))
