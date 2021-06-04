@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='dlgo',
-      version='0.24',
+      version='0.25',
       description='Deep Learning and the Game of Go',
       url='http://github.com/hmobley/dlgo',
       install_requires=[
