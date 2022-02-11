@@ -4,7 +4,7 @@ from dlgo.encoders.oneplane import OnePlaneEncoder
 from dlgo.networks import small
 from keras.models import Sequential
 from keras.layers.core import Dense
-from keras.collbacks import ModelCheckpoint
+from keras.callbacks import ModelCheckpoint
 
 go_board_rows, go_board_cols = 19,19
 num_classes = go_board_rows * go_board_cols
