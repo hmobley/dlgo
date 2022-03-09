@@ -43,6 +43,7 @@ class DataGenerator:
                 #print('feature file: {}'.format(cfeature))
                 label_file = feature_file.replace('features', 'labels')
                 x = np.load(feature_file)
+                #print("x.shape={}".format(x.shape))
                 y = np.load(label_file)
                 x = x.astype('float32')
                 y = to_categorical(y.astype(int), num_classes)
@@ -63,5 +64,3 @@ class DataGenerator:
                 #inner += 1
                 #print("generate yield counts: outer: {}, inner: {}".format(outer,inner))
                 yield item
-
-    

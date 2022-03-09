@@ -22,9 +22,11 @@ class OnePlaneEncoder(Encoder):
                 if go_string is None:
                     continue
                 if go_string.color == next_player:
-                    board_matrix[0, r, c] = 1
+                    board_matrix[r, c, 0] = 1
+                    #board_matrix[0, r, c] = 1
                 else:
-                    board_matrix[0, r, c] = -1
+                    board_matrix[r, c, 0] = -1
+                    #board_matrix[0, r, c] = -1
         return board_matrix
 
     def encode_point(self, point):
@@ -39,8 +41,9 @@ class OnePlaneEncoder(Encoder):
         return self.board_width * self.board_height
 
     def shape(self):
-        return self.num_planes, self.board_height, self.board_width
+        return self.board_height, self.board_width, self.num_planes
+        #return self.num_planes, self.board_height, self.board_width
 
-    
+
 def create(board_size):
     return OnePlaneEncoder(board_size)

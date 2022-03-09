@@ -173,6 +173,8 @@ class GoDataProcessor:
         return game_state, first_move_done
 
     def map_to_workers(self, data_type, samples):
+        #multiprocessing.set_start_method('spawn') # thought would help, nope
+        #multiprocessing.set_start_method('fork') # thought would help, nope
         zip_names = set()
         indices_by_zip_name = {}
         for filename, index in samples:
