@@ -55,14 +55,14 @@ if __name__ == '__main__':
                     metrics=['accuracy'])
     model.fit(generator.generate(batch_size, num_classes),
                     epochs=epochs,
-                    #steps_per_epoch=generator.get_num_samples() / batch_size,
-                    steps_per_epoch=12288,
+                    steps_per_epoch=generator.get_num_samples() / batch_size,
+                    #steps_per_epoch=12288,
                     validation_data=test_generator.generate(batch_size, num_classes),
                     validation_steps=test_generator.get_num_samples() / batch_size,
                     callbacks=[ModelCheckpoint('../checkpoints/small_model_epoch_{epoch}.h5')])
     model.evaluate(test_generator.generate(batch_size, num_classes),
-                    #steps=test_generator.get_num_samples() / batch_size)
-                    steps=12288)
+                    steps=test_generator.get_num_samples() / batch_size)
+                    #steps=12288)
 
     # model.fit_generator(generator=generator.generate(batch_size, num_classes),
     #                 epochs=epochs,
