@@ -193,6 +193,7 @@ class GoDataProcessor:
                                         self.data_dir))
 
         cores = multiprocessing.cpu_count()  # Determine number of CPU cores and split work load among them
+        print("cores: {}".format(cores))
         pool = multiprocessing.Pool(processes=cores)
         p = pool.map_async(worker, zips_to_process)
         try:
